@@ -4,14 +4,15 @@ class Country{
     String continent;
     String region;
     String capital;
-}
+
 public void showInfo(){
     System.out.println("Name"+ name);
     System.out.println("Continent"+ continent);
     System.out.println("Region"+ region);
     System.out.println("Capital"+ capital);
 }
-public static void main(String[] args){
+}
+public  void main(String[] args){
     Country c1 = new Country();
     c1.name = "Nepal";
     c1.continent = "Asia";
