@@ -1,7 +1,0 @@
-#! /usr/bin/env -S java --source 26
-class Example1{
-    public static void main(String[] args){
-        Vehicle v1=new Vehicle();
-        v1.start();
-    }
-}
