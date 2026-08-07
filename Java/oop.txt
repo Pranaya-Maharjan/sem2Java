@@ -213,7 +213,7 @@ class Box{
         return wdith * height * depth;
     }
 }
-
+-----------------------------------------------------------------------------------------------------------------
                                  Java Packages
 What is package:
 Package are used in Java, in order to avoid name conflicts and to control access of class, interface and enumeration etc.
@@ -285,6 +285,7 @@ Pass by Reference & by value in Java
   the original.
 . Key point: Java does not have true pass-by-reference liek C++, but object references passes by value can mimic
   similar behaviour.
+-----------------------------------------------------------------------------------------------------------------
 Recursion in Java
 . In Java, recursion is a programming technique where a method calls itself directly or indirectly to solve 
   a problem.
@@ -336,6 +337,7 @@ public class Main{
 }
 Invoking Current Class Constructor: The "this" keyword can be used to call another constructor in the same class. This is known as explicit constructor invocation.
 Returning the Current Class Instance: The "this" keyword can be used to reutrn the current class instance from a method.
+-----------------------------------------------------------------------------------------------------------------
 Nested Class in Java
 . Defining ckass within another class is known as nested class.
 . It allows to logically group classes that are only used in one places.
@@ -382,6 +384,7 @@ access modifiers:
    Set()-->method:
    . takes parameter with respect to data
    . no return type i.e type void
+-----------------------------------------------------------------------------------------------------------------
 Abstraction
 . is a process of exposing all the necessary details and hiding the rest.
 . defines an object in terms of its properties (attributes), behaviour(methods), and interfaces(means of communicating with other objects).
@@ -394,6 +397,7 @@ Registration                  Owner              Garage
 . Current Owner              . Petrol Mileage    . Billing Info
 . Tax due, date                History           . Owner
 Here you can see that an Onwer is interested in details like Car description, service history. Garage Personnel are interested in details like License, work description, bill,owner,etc; and Registration Office interested in details like vehicle identification number, current owner, license plate,etc. It means each aplication identifies the details that are important to it.
+-----------------------------------------------------------------------------------------------------------------
 Abstract Classes in Java:
 . An Abstract class is a class whose objects can't be created. An Abstract class is created through the use of the abstract keyword. It is used to represent a concept.
 . An abstract class can have abstract methods (methods without body) as wella s non-abstract methods or concrete methods(methods with the body). A non-abstract class cannot have abstract methods.
@@ -402,6 +406,9 @@ Abstract Classes in Java:
 . Using an abstract class, we can achieve 0 to 100% abstraction.
 . There is always a default constructor in an abstract class, it can also have a parameterized constructor.
 . THe abstract class can also contain final and static methods.
+. Note: if any of the class is inhereting or using properties of abstract class i.e. extending abstract class the  n:
+  a. the implementation/subclass must be defined as abstract or
+  b. the implementation class must implement i.e. override all the abstract method of the abstract class.
 Syntax of delcaring an abstract class:
  To declare an abstract class we use keyword abstract. The syntax is given below:
          abstract class className
@@ -415,3 +422,45 @@ Abstract Methods in Java
 . The child classes which inherit the abstract class must provide the implementation of these inherited abstract methods.
 Syntax of delcaring abstract methods:
    access-specifier abstract return-type method-name();
+Example of abstract class and methods
+class ChildClass extends BaseClass{
+//Must override this method while extending the Parent class
+public void show1(){
+    System.out.println("OVerriding the abstract method of the parent class");
+}
+//Overriding concrete method is not compulsory 
+public voidshow2(){
+    System.out.println("Overriding concrete emthod of parent class");
+}
+}
+public class AbstractionDemon{
+   public static void main(String[] args){
+      ChildClass obj = new ChildClass();
+      obj.show1();
+      obj.show2();
+   }
+}
+-----------------------------------------------------------------------------------------------------------------
+package com.techvidvan.abstraction;
+//parent class
+abstract class BaseClass
+{
+    //abstract method
+    abstract public void show1();
+    //concrete method
+    public void show2(){
+        System.out.println("Concrete method of parent class");
+    }
+}
+Advantages of Abstraction in Java
+. It reduces the complexity of viewing things.
+. Increases software reuse and avoids code duplication: Loosely coupled classes often prove useful in other contexts.
+. It helps to increase the security and confidentiality of an application as only necessary details are exposed to the user.
+. Eases the burden of maintenance-Classes can be understood more quickly and debugged with little fear of harming other modules.
+Coupling--> dependency
+Cohesion--> load/functionality
+Data Encapsulation vs Data Abstraction in Java
+. Encapsulation is one step beyond abstraction.
+. Data Encapsulation is hidden data or information while Abstraction is hidinf the implementation details.
+. Encapsulation binds the data members and methods together while data abstraction deals with showing the extenaldetails of an entity to the user and hiding the details of its implementation.
+. Abstraction provides access to a specific part of data while encapsulation hides the data.
