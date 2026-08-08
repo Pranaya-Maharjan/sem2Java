@@ -20,7 +20,7 @@ Class
 A class in Java can contain:
 . Fields/Attributes(adjective)
 . Methods(verb)
-. Constructors 
+. Constructors
 . Blocks
 . Nested class and interface
 Rules:
@@ -45,7 +45,7 @@ Types of Method
     . Predefined Method
     . User defined Method
 Naming aMethod
-While defining a method, remember that the method name must be a verb and start with a lowercase letter, if the method name has more than two words, the first name must be a verb followed by adjective or noun and start with a lowercase letter. 
+While defining a method, remember that the method name must be a verb and start with a lowercase letter, if the method name has more than two words, the first name must be a verb followed by adjective or noun and start with a lowercase letter.
 If the multi-word method name, the first letter of each word must be in uppercase expect the first word. For example:
 Single word method name: sum() area()
 Multi-word method name: areaOfCircle(),stringComparision()
@@ -88,22 +88,22 @@ Constructor
    object is allocated in the memory.
 Rules of Constructor
 There are two rules defined for the constructor.
-1. Constructor name must be the same as class name. 
-2. A constructor must have no explicit return type. 
-3. A Java constructor cannot be abstract, static, final, and synchronized. 
-Types of Java constructor 
-There are two types of constructors in Java: 
-1. Default constructor (no-arg constructor) 
+1. Constructor name must be the same as class name.
+2. A constructor must have no explicit return type.
+3. A Java constructor cannot be abstract, static, final, and synchronized.
+Types of Java constructor
+There are two types of constructors in Java:
+1. Default constructor (no-arg constructor)
 2. Parameterized constructor
-Difference betwn constructor and method.                
----------------------------------------------------------------------------------------------------------------  
+Difference betwn constructor and method.
+---------------------------------------------------------------------------------------------------------------
 | Constructor                                                     |        Method                               |
 ----------------------------------------------------------------------------------------------------------------
 | 1. A constructor is sued to initialize the state of an object. |    A method is used to expse the behavior of an object.      |
 | 2. A constructor must not have a return type.                   |    A method must have a return type.                         |
 | 3. The constructor is invoked implicitly.                       |    The method is invoked explicitly.                         |
 | 4. The Java compiler provides a defualt constructor if dont     |    The method is not provided by the compiler in any         |
-|    have any constructor in a class.                             |    case.                                                     | 
+|    have any constructor in a class.                             |    case.                                                     |
 | 5. The constructor name must be same as the class name.         |    The method name may or may not be same as the class name. |
 --------------------------------------------------------------------------------------------------------------------------------
 #Let us see example of default constructor.
@@ -121,7 +121,7 @@ public static void main(String args[]){
     s2.display();
 }
 }
-Parameterized Constructor 
+Parameterized Constructor
 . has a specific number of parameters
 . The parameterized constructor is used to provide different values to distinct objects. However, you can provide
   the same values also.
@@ -287,7 +287,7 @@ Pass by Reference & by value in Java
   similar behaviour.
 -----------------------------------------------------------------------------------------------------------------
 Recursion in Java
-. In Java, recursion is a programming technique where a method calls itself directly or indirectly to solve 
+. In Java, recursion is a programming technique where a method calls itself directly or indirectly to solve
   a problem.
 . The method that calls itself is called a recursive method.
 . Recursion is often used for problems that can be broken down into smaller, similar sub-problems, such as
@@ -380,7 +380,7 @@ access modifiers:
 1. data access--> private/protected data (for)
    get()-->method:
      return type--> with respect to data
-2. data store to --> private /protected data 
+2. data store to --> private /protected data
    Set()-->method:
    . takes parameter with respect to data
    . no return type i.e type void
@@ -390,7 +390,7 @@ Abstraction
 . defines an object in terms of its properties (attributes), behaviour(methods), and interfaces(means of communicating with other objects).
 Abstraction can be seen as the technique of filtering out the unnesessary details an object so that there remain only the useful characteristics that define it.
 Abstraction focuses on perceived behavior of the entity. It provides and external view of the entity.
-Example of Abstraction 
+Example of Abstraction
 Registration                  Owner              Garage
 . Vehicle id number          . Car description   .License plate
 . License plate              . Service history   . Work Description
@@ -402,7 +402,7 @@ Abstract Classes in Java:
 . An Abstract class is a class whose objects can't be created. An Abstract class is created through the use of the abstract keyword. It is used to represent a concept.
 . An abstract class can have abstract methods (methods without body) as wella s non-abstract methods or concrete methods(methods with the body). A non-abstract class cannot have abstract methods.
 . The clas has to be delcared as a abstract if it contains at least one abstract method.
-. An abstract class does not allow you to create objects of its type. In this case, we can only use the objects of its subclass. 
+. An abstract class does not allow you to create objects of its type. In this case, we can only use the objects of its subclass.
 . Using an abstract class, we can achieve 0 to 100% abstraction.
 . There is always a default constructor in an abstract class, it can also have a parameterized constructor.
 . THe abstract class can also contain final and static methods.
@@ -428,7 +428,7 @@ class ChildClass extends BaseClass{
 public void show1(){
     System.out.println("OVerriding the abstract method of the parent class");
 }
-//Overriding concrete method is not compulsory 
+//Overriding concrete method is not compulsory
 public voidshow2(){
     System.out.println("Overriding concrete emthod of parent class");
 }
@@ -464,3 +464,150 @@ Data Encapsulation vs Data Abstraction in Java
 . Data Encapsulation is hidden data or information while Abstraction is hidinf the implementation details.
 . Encapsulation binds the data members and methods together while data abstraction deals with showing the extenaldetails of an entity to the user and hiding the details of its implementation.
 . Abstraction provides access to a specific part of data while encapsulation hides the data.
+Interface
+. amechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+. Java Interface also represents the IS-A relationship.
+Why use Java interface?
+ There are mainy three reasons to use interface. They are given below.
+   . It is used to achieve abstraction.
+   . By interface, we can support the functionality of multiple inheritance.
+   . It can be used to achieve loose coupling.
+         -----------          --------------         --------------
+         | class   |          | Interface  |         | Interface  |
+         -----------          --------------         --------------
+             ^                      ^                      ^
+             |extends               |implements            |extends
+             |                      |                      |
+         -----------          --------------         ---------------
+         | class   |          | class      |         |  Interface  |
+         -----------          --------------         ---------------
+Example
+interface Drawable{
+    void Draw();
+}
+class Rectangle implements Drawable{
+    public void draw(){
+        System.out.println("Drawing rectangle");
+    }
+}
+class Circle impelements Drawable{
+    public void draw(){
+        System.out.println("Drawing circle");
+    }
+}
+class TestInterface1{
+    public static void main(String[] args){
+        Drawable d = new Circle();
+        d.draw();
+    }
+}
+Abstract vs Interface
+-----------------------------------------------------------------------------------------------------------------
+Abstract Class                                                    |                   Interface
+-----------------------------------------------------------------------------------------------------------------
+1. Abstract class can have both abstract and non-abstract methods.| 1.Interface can have only abstract methods.Since
+                                                                  | Java 8, it can have default and static method also.
+2. Abstract class doesn't support multiple inheritance.           | 2.Interface supports multiple inheritance.
+3. Abstract class can have final, non-final static and non-static | 3.Interface has only static and final variables.
+fields.                                                           |
+4. Abstract class can provide the implementation of the interface.| 4.Interface cannot provide the implementation of abs                                                                  | tract methods.
+5. The abstract keyword is used to delcare abstract class.        | 5.The interface keyword is used to declare interface
+6. An abstract class can extend another Java class and implement  | An interface can extend another Java interface only.
+multiple Java interfaces.                                         |
+7. An abstract class be extended using keyword 'extends'.         | An interface can be implemented using keyword 'imple                                                                  | ments'.
+8. A Java abstract class can have class members like private,     | Members of a Java interface are public by default.
+protected,etc.                                                    |
+9. Example:                                                       | Example:
+   public abstract class Animal {                                 | public interface Animal {
+       public abstract void makeSound();                          |     void makeSound();
+   }                                                              | }
+----------------------------------------------------------------------------------------------------------------
+Inheritance
+. mechanism in which one object acquires all the properties and behavors of a parent object.
+. Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
+Why use inheritance in java
+. For Method Overriding(so runtime polymorphism can be achieved).
+. For Code Reusability.
+Terms used in Inheritance 
+. Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
+. Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
+. Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class. 
+. Reusability: As the name specifies. reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the pervious class.
+class User{ 
+   public String full_name;
+   public String email;
+   publc String role;
+   public void stringName(){
+       System.out.println("Full name:" + full_name);
+   }
+}
+class Admin extends User{
+   public String designation;
+   public void showInfo(){
+      System.out.println("Role"+ this.role);
+      System.out.println("Designation"+ designation);
+  }
+}
+class Gmail extends User{
+    public void info(){
+        System.out.println("Role"+ this.role);
+    }
+}
+class Main{
+    public static void main(String args[]){
+        Admin a = new Admin();
+        a.full_name= "Arbiter";
+        a.email= "arbiter@gmail.com";
+        a.role = "Creator";
+        a.destination = "Etheric Sea";
+        a.showInfo();
+        a.showName();
+        Gmail g = new Gmail();
+        g.full_name = "Rona";
+        g.info();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------class A {
+    String title;
+     public void showTitle(){
+         System.out.println("Title" + title);
+     }
+ }
+class B extends A{
+    String name;
+    public void info(){
+        System.out.println("Name"+ name);
+        System.out.println("Title"+ this.title);
+    }
+}
+class Main{
+    public static void main(String args[]){
+         A a = new A();
+         a.title = "I am him";
+         a.showTitle;
+         B b = new B();
+         b.name = "I am not him";
+         b.title = "A is not B";
+         b.showTitle();
+         b.info();
+    }
+}
+
+Types of inheritance
+
+
+        class A                     class A                              class A
+         
+          ^                            ^                                 ^       ^
+          |                            |                                 |       |
+       
+        class B                     class B                           class B     class C
+                                    
+                                       ^
+      1. single                        |                                3. hierarchical
+                         
+                                     class C 
+                                                                                 4. hybrid 5. Multiple
+                            
+                                 2. Multilevel
+-----------------------------------------------------------------------------------------------------------------
