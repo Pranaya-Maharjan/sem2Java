@@ -8,6 +8,7 @@ It simplifies software development and maintenance by providing some concepts:
 . Abstraction
 . Encapsulation
 . Coupling
+. Cohesiong
 . Cohesion
 . Association
 . Aggregation
@@ -610,4 +611,843 @@ Types of inheritance
                                                                                  4. hybrid 5. Multiple
                             
                                  2. Multilevel
+-----------------------------------------------------------------------------------------------------------------Single Inheritance Example
+When a class inherits another class, it is known as a single inheritance. In the example given below. Dog class Inherits the Animal class, so there is the single inheritance.
+
+File : TestInheritance.java
+
+class TestInheritance{
+    public static void main(String[] args){
+           Dog d = new Dog();
+           d.bark();
+           d.eat();
+   }
+}
+class Animal{
+    void eat(){
+         System.out.println("Eating");
+    }
+}
+class Dog extends Animal{
+    void bark(){
+            System.out.println("barking");
+    }
+}
+
+Hierarchical Inheritance Example
+When two or more classes inherits a single class, it is known as hierarchical inheritance. In the example given below. Dog and Cat classes inherits the Animal class, so there is hierarchical Inheritance.
+
+File : Test Inheritance3.java
+class Animal{
+   void eat(){
+       System.out.println("eating...");
+   }
+}
+class Dog extends Animal{
+    void bark(){
+        System.out.println("barking...");
+    }
+}
+class Cat extends Animal{
+   void meow(){
+       System.out.println("meowing...");
+   }
+}
+class TestInheritance3(){
+    public static void main(String[] args){
+       Cat c = new Cat();
+       c.meow();
+       c.eat();
+   }
+} 
+
+Super Keyword in Java
+The super keyword in java is a reference variable which is used to refer immediate parent class object.
+Whenever you create the instance of subclass, an instance of aprent class is created implicitly which is referredby super reference variable.
+Usage of Java super keyword
+ 1. Super can be used to refer immediate parent class instance variable.
+ 2. Super can be used to invoke immeidate parent class method.
+ 3. Super() can be used to invoke immediate parent class constructor.
+
+1. Super is used to refer immediate parent class instance variable.
+  We can use super keyword to access the data member of field of parent class. It is used if parent class and chi  ld class have same fields.
+class Animal{
+    String color = "white";
+}
+class Dog extends Animal{
+    String color = "black";
+    void printColor(){
+        System.out.println(color);
+        System.out.println(super.color);
+    }
+}
+class TestSuper{
+    public static void main(String[] args){
+        Dog d = new Dog();
+        d.printColor();
+    }
+}
+Polymorphism
+#changing behaviour with respect to condition i.e 
+1. compile time
+2. run time (execution time)
+# task that is performed in different 
+  compile time (overloading)
+  runtime (overloading)
+
+. Association
+. Aggregation
+. Composition
+
+Class
+. a group of objects which have common properties.
+. a template or blueprint from which objects are created.
+. It is logical entity. It can't be physical.
+A class in Java can contain:
+. Fields/Attributes(adjective)
+. Methods(verb)
+. Constructors
+. Blocks
+. Nested class and interface
+Rules:
+It should start with uppercase letter.(first letter capital)
+It should be noun such as Color. Button, System, Thread, etc.
+Use appropriate words, instead of acronyms.
+Examples:- Employee, Student, Vehicle, Address
+
+Object
+. an object is a real world entiy.
+. an object is a runtime entity.
+. the object is an entity which has state and behaviour.
+. the object is an instance of a class.
+. object represents the properties of a class.
+
+Method (function)
+. a collection fo instructions that performs a specific task.
+. a block of code or collection of statemtns or a set of code grouped together to perform a certain task or operation.
+. It is used to achieve the resuability of code. We write a method once and use it many lines.
+Types of Method
+  There are two types of methods in Java:
+    . Predefined Method
+    . User defined Method
+Naming aMethod
+While defining a method, remember that the method name must be a verb and start with a lowercase letter, if the method name has more than two words, the first name must be a verb followed by adjective or noun and start with a lowercase letter.
+If the multi-word method name, the first letter of each word must be in uppercase expect the first word. For example:
+Single word method name: sum() area()
+Multi-word method name: areaOfCircle(),stringComparision()
+Synatx of method declaration:
+public int sum (int a, int b){       access-specifier return-type method_name(parameter-list){
+    int result = a+b;                              statements;
+    return result;                   }
+}
+#Four types of user defined method.
+1. method with parameter and no return.
+2. method with parameter and return.
+3. method without paramenter and return.
+4. method without parameter and no return.
+public void session(){
+    System.out.println("OOP in Java Method session");
+}        #4.method without parameter and no return
+public double calculateVat(){
+    double vat = 13.00;
+    double price = 15200.00;
+    double vat_amt = (vat/100) + price;
+    return vat_amt;
+}        #3.method without parameter and return.
+
+public boolean checkLogin(String password, String username){
+    if(password.equals("12345") && username.equals("admin){
+        return true;
+    }
+    else{
+        return false;
+    }
+}       #.2 method with parameter and with return value.
+public void sum(int a, int b){
+    int sum = a+b;
+    System.out.println("The sum of two number is" + sum);
+}       #.1 method with paramenter and no return value.
+
+Constructor
+1. a constructor is a block of codes similar to the method.
+2. It is called when an instance of the class is created. At the time of calling constructor, memory for the
+   object is allocated in the memory.
+Rules of Constructor
+There are two rules defined for the constructor.
+1. Constructor name must be the same as class name.
+2. A constructor must have no explicit return type.
+3. A Java constructor cannot be abstract, static, final, and synchronized.
+Types of Java constructor
+There are two types of constructors in Java:
+1. Default constructor (no-arg constructor)
+2. Parameterized constructor
+Difference betwn constructor and method.
+---------------------------------------------------------------------------------------------------------------
+| Constructor                                                     |        Method                               |
+----------------------------------------------------------------------------------------------------------------
+| 1. A constructor is sued to initialize the state of an object. |    A method is used to expse the behavior of an object.      |
+| 2. A constructor must not have a return type.                   |    A method must have a return type.                         |
+| 3. The constructor is invoked implicitly.                       |    The method is invoked explicitly.                         |
+| 4. The Java compiler provides a defualt constructor if dont     |    The method is not provided by the compiler in any         |
+|    have any constructor in a class.                             |    case.                                                     |
+| 5. The constructor name must be same as the class name.         |    The method name may or may not be same as the class name. |
+--------------------------------------------------------------------------------------------------------------------------------
+#Let us see example of default constructor.
+class Student3{
+    int id;
+    string name;
+    #method to display the value of id and name
+    void display()(System.out.println(id+""+name);)
+
+
+public static void main(String args[]){
+    Student3 s1=new Student3();
+    Student3 s2=new Student3();
+    s1.display();
+    s2.display();
+}
+}
+Parameterized Constructor
+. has a specific number of parameters
+. The parameterized constructor is used to provide different values to distinct objects. However, you can provide
+  the same values also.
+#Java Program to demonstate the use of parameterized constructor.
+class Student4{
+    String name;
+    Student4(int i,String n){
+        id= i;
+        name = n;
+    }
+    void display()(System.out.println(id+""+name);)
+    public static void main(String[] args){
+        Student4 s1=new Student4(111,"Karan");
+        Student s2=new Student4(222,"Aryan");
+        s1.display();
+        s2.display();
+    }
+}
+Constructor Overloading   (overloading always in compile time)
+. a constructor is just like a method without return type. It can also be overloaded like Java methods.
+. Constructor overloading in Java is a etchnique of having more than one constructor with different
+  parameter lists. They are arranged in a way that each constructor performs a different task.
+  Example
+  #java program to overload constructor
+  class Student5{
+      int id;
+      String name;
+      int age;
+      # creating two arg constructor
+      Student5(int i, String n){
+          id = i;
+          name = n;
+      }
+      # creating three arg constructor
+      Student5(int i, String n, int a){
+          id = i;
+          name = n;
+          age = a;
+      }
+      void display{
+          System.out.println(id + ""+name+""+age);
+      }
+      public static void main(String[] args){
+          Student5 s1 =new Student5(01,"Karan");
+          Student5 s2 =new Student5(02,"Aayog",20);
+          s1.display();
+          s2.display();
+     }
+ When do we need constructor Overloading?
+. Constructor overlaoding is useful when:
+. Objects need to be initialized with different sets of data
+. Defualt valies are requireed in some cases
+. Simplified object creation is desired for common use cases
+
+Problem without Constructor Overlaoding
+class Box{
+    double width,height,depth;
+    Box(double w,double h,double d){
+        width = w;
+        height = h;
+        depth = d;
+    }
+    double volume(){
+        return width*height*depth;
+    }
+}
+In this case, the following statement is invalid;
+Box box =new Box(); //Compile time error
+The class does not support creating:
+. An empty box
+. A cube using a single value
+how do you implement method overloading or constructor overloading
+
+Example of constructor overloading
+class Box{
+    double width,height,depth;
+    Box(double w,double h,double d){
+        width =w;
+        height = h;
+        depth = d;
+    }
+    Box(){
+        wdith = height = depth = 0;
+    }
+    Box(double len){
+        width = height = depth = len;
+    }
+    double volume(){
+        return wdith * height * depth;
+    }
+}
 -----------------------------------------------------------------------------------------------------------------
+                                 Java Packages
+What is package:
+Package are used in Java, in order to avoid name conflicts and to control access of class, interface and enumeration etc.
+A package can be defined as a group of similar types of classes, interface, enumeration or subpackage.
+   Using package it becomes easier to locate the related classes and it also provides a good structure for projects
+with hundereds of classes and other files.
+Benefits of using packages in java:
+1. Java package is used to categorize the classes and interfaces so that they can be easily maintained.
+2. Java package provides access protection.
+3. Java package removes naming collision.
+4. This packages can be provide reusability of code.
+5. We can create our own package or extend already available package.
+
+Java Packages: Types:
+. Built in Package: Existing Java package for example java.lang, java.util,java.io,etc.
+. User-defiend-package: Java package created by user to categorize their project's classes and interface
+                                        ------------
+                                        |  Java    |
+                                        ------------
+                                              |
+                                 ---------------------------
+                                 |      |     |      |     |
+                               lang    util   io    net   awt
+
+How to create a package:
+Creating a package in java is quite easy. Simply include a package command followed by name of the package
+as the first statement in hava source file.
+package mypackage;
+public class student
+{
+    Statement;
+}
+The above statement will create a package name mypackage in the project directory.
+Java uses file system directories to store packages. For example the .java file for any class you define to be aprt of mypackage packages must be stored in a directory called mypackage.
+Additional points about package:
+. A package is always defiend as a seperate folder having the same name as the package name.
+. Store all the classes in the package folder.
+. All classes of the package which we wish to accesss outside the package must be declared public.
+. All classes within the package must have the package statement as its first line.
+. All classes of the package must be complied before use (So that they are error free)
+How to complie Java packages:
+This is jsut like compiling a normal java program, If you are not using any IDE, you need to follow the steps
+given below to successfully compile your packages:
+1. java -d directory javafilename
+    For example javac -d , Simple.java
+    The -d switch specifies the destination where to put the generated class file. You can use any directory name like
+    /home (in case of Linux), d:/abc(in case of windows) etc. If you want to keep the package within the same directory,
+    you can use .(dot).
+How to run java package program:
+You need to use fully qualified name e.g. mypack.Simple etc too run the class.
+To Compile: javac -d . Simple.java
+To Run: java mypack.Simple
+
+How to access package from another package:
+There are three ways to access the apckage from outside the package
+1. import package. *;
+2. import package classname;
+3. fully qualified name.
+
+1. Using packagename.*:
+    If you use package.* then all the classes and interfaces of this package will be accessible but not subpackages.
+    The import keyworkd is used to make the classes and interfaces of another package accessible to the current package
+
+Pass by Reference & by value in Java
+. In Java, primitive types (like int,double,boolean) are always passed by value, meaning a copy of the actual
+  value is sent tot the method.
+. For objects, Java passes a copy of the reference(not the object itself). This means both the original and
+  the copied reference point to the same object in memory, so changes to the object inside the method affect
+  the original.
+. Key point: Java does not have true pass-by-reference liek C++, but object references passes by value can mimic
+  similar behaviour.
+-----------------------------------------------------------------------------------------------------------------
+Recursion in Java
+. In Java, recursion is a programming technique where a method calls itself directly or indirectly to solve
+  a problem.
+. The method that calls itself is called a recursive method.
+. Recursion is often used for problems that can be broken down into smaller, similar sub-problems, such as
+  factorial calcuation, Fibonacci series, tree traversal, and graph searches.
+. A recursive method typically has two parts:
+  . Base Case- The stopping condition that ends the recursion.
+  . Recursive Case-
+Memeory Allcoation in Recursion
+. Each recursive call gets its own stack frame containing parameters, local variables, and return addresses.
+. When the base case is reached, calls start returning, and stack frames are popepd off.
+. For large inputs or deep recursion, consider iterative solutions or trail recursion optimization to avoid
+  performance and memory issues.
+Advantages and Disadvantages of Recursion
+. Advantages
+  .Cleaner,more intuitive code for inherently recursive problems(e.g., tree traversal).
+  .Matches the natural structure of divide-and-conquer algorithms.
+Disadvantages
+. Higher memory usage due to multiple stack frames.
+. Slower execution from repeated function calls.
+. Risk of StackOVerflowError if base case is missing or recursion depth is too large.
+"this" keyword in Java
+. the "this" keyword is a reference variable that refers to the current object.
+. It is used within an instance method or a constructor to refer to the current object whose method or constructo  r to the current object whose method or constructor is being called.
+. The "this" keyword helps in distinguishing between instance variables and local variables with the same name,
+  and it can also be used for various other purposes.
+Advantages and Disadvantages of this Keyword.
+* Advantages:
+. Helps to distingush between instance variables and local variables with the same name.
+. Can be used to pass the current object as an argument to another method.
+. Can be used to return the current object from a method.
+. Can be used to invoke a constructor form another overloaded constructor in the same class.
+* Disadvantages:
+. Overuse fo this can make the code harder to read and understand.
+. Using this unnecessarily can add unnecessary overhead to the program.
+. Using this in a static context results in a compile-time error.
+Key uses of this Keyword.
+Referring to Instance Variables: The most common use of the "this" keyword is to eliminate confusion between class arrtibutes and parameters with same name. For example:
+public class Main{
+    int x;
+    public Main(int x){
+        this.x=x;
+    }
+    public static void main(String[] args){
+        Main myObj = new Main(5);
+        System.out.println("Value of x = ", myObj.x);
+    }
+}
+Invoking Current Class Constructor: The "this" keyword can be used to call another constructor in the same class. This is known as explicit constructor invocation.
+Returning the Current Class Instance: The "this" keyword can be used to reutrn the current class instance from a method.
+-----------------------------------------------------------------------------------------------------------------
+Nested Class in Java
+. Defining ckass within another class is known as nested class.
+. It allows to logically group classes that are only used in one places.
+. It helps to increase the use of encapsulation and creates more readable and maintainable code.
+. The scope of a nested class is bounded by the scope of its enclosing class.
+. A nested class has access to the members, including private members, of the class in which it is nested. But th  e enclosing class does not have access to the member of the nested class.
+. A nested class is also a member of its enclosing class.
+. As a member of its enclosing class, a nested class can be delcated private, public, protected, or package-priva  te(default).
+Types of Nested Class
+. Static nested class: Nested classes that are delcared static are called static nested classes.
+. Inner class: An inner class is a non satitc nested class. To instantiate an inner class, you must first instant  iate the outer class. Then, create the inner object within the outer object with this syntax:
+Static nested classes
+. Delcared with the static keyword; does not require an instance of the outer class. Can only directly access static members of the outer class.
+.In the case of normal or reguar inner classes, without an outer class object existing, there cannot be an inner class object, i.e., an object of a static nested class is not strongly associated with the outer class object.
+. As with class methods and variables, a static nested class is associated with its outer class.
+. And like static class methods, a static nested class cannot refer directly to instance variables or methods defined in its enclosing class: it can sue them only through an object reference. They are accessed using the enclosing class name.
+Regular Class vs Static Class
+----------------------------------------------------------------------------------------------------------------
+|   Normal/Regular inner class                    |            Static nested class                             |
+----------------------------------------------------------------------------------------------------------------
+|1. Without an otuer class object exisitng, there | Without an outer class object existing, there may be a stat|
+|cannot be an inner class object. That is, the    |ic nested class object. That is a static nested class object|
+|inner class object is alwats associated with the |is not associated with the outer class object.              |
+|outer class object.                              |                                                            |
+|2. As the main() method can't be declared the    |As the main() method can be declared, the static nested     |
+|regular inner class can't be invoked directly    |class can be invoked directly from command prompt.          |
+|from the command prompt.                         |                                                            |
+|3. Both static and non-static members of the     |Only a static member of an outer class can be accessed      |
+|the outer class can be accessed directly.        |directly.                                                   |
+----------------------------------------------------------------------------------------------------------------
+Encapsulation
+. Data Hiding or Data binding
+. A emchanism of wrapping the data(variables) and code acting on the data (methods) together as a single unit.
+. The variables of a class will be hidden from other classes and can be accessed only through the methods of thei  r current class.
+Benefits of Encapsulation
+. The fields of a class can be made read-only or write-only.
+. A class can have total control over what is stored in its fields.
+access specifier: public,private,protected,default.
+access modifiers:
+1. data access--> private/protected data (for)
+   get()-->method:
+     return type--> with respect to data
+2. data store to --> private /protected data
+   Set()-->method:
+   . takes parameter with respect to data
+   . no return type i.e type void
+-----------------------------------------------------------------------------------------------------------------
+Abstraction
+. is a process of exposing all the necessary details and hiding the rest.
+. defines an object in terms of its properties (attributes), behaviour(methods), and interfaces(means of communicating with other objects).
+Abstraction can be seen as the technique of filtering out the unnesessary details an object so that there remain only the useful characteristics that define it.
+Abstraction focuses on perceived behavior of the entity. It provides and external view of the entity.
+Example of Abstraction
+Registration                  Owner              Garage
+. Vehicle id number          . Car description   .License plate
+. License plate              . Service history   . Work Description
+. Current Owner              . Petrol Mileage    . Billing Info
+. Tax due, date                History           . Owner
+Here you can see that an Onwer is interested in details like Car description, service history. Garage Personnel are interested in details like License, work description, bill,owner,etc; and Registration Office interested in details like vehicle identification number, current owner, license plate,etc. It means each aplication identifies the details that are important to it.
+-----------------------------------------------------------------------------------------------------------------
+Abstract Classes in Java:
+. An Abstract class is a class whose objects can't be created. An Abstract class is created through the use of the abstract keyword. It is used to represent a concept.
+. An abstract class can have abstract methods (methods without body) as wella s non-abstract methods or concrete methods(methods with the body). A non-abstract class cannot have abstract methods.
+. The clas has to be delcared as a abstract if it contains at least one abstract method.
+. An abstract class does not allow you to create objects of its type. In this case, we can only use the objects of its subclass.
+. Using an abstract class, we can achieve 0 to 100% abstraction.
+. There is always a default constructor in an abstract class, it can also have a parameterized constructor.
+. THe abstract class can also contain final and static methods.
+. Note: if any of the class is inhereting or using properties of abstract class i.e. extending abstract class the  n:
+  a. the implementation/subclass must be defined as abstract or
+  b. the implementation class must implement i.e. override all the abstract method of the abstract class.
+Syntax of delcaring an abstract class:
+ To declare an abstract class we use keyword abstract. The syntax is given below:
+         abstract class className
+         {
+             //class body
+         }
+Abstract Methods in Java
+. Abstract methdods are methods with no implementation and without a method body. They do not contain any method statement.
+. An abstract method is delcared with an abstract keyword.
+. The declaration of an abstract method must end with a semicolon;
+. The child classes which inherit the abstract class must provide the implementation of these inherited abstract methods.
+Syntax of delcaring abstract methods:
+   access-specifier abstract return-type method-name();
+Example of abstract class and methods
+class ChildClass extends BaseClass{
+//Must override this method while extending the Parent class
+public void show1(){
+    System.out.println("OVerriding the abstract method of the parent class");
+}
+//Overriding concrete method is not compulsory
+public voidshow2(){
+    System.out.println("Overriding concrete emthod of parent class");
+}
+}
+public class AbstractionDemon{
+   public static void main(String[] args){
+      ChildClass obj = new ChildClass();
+      obj.show1();
+      obj.show2();
+   }
+}
+-----------------------------------------------------------------------------------------------------------------
+package com.techvidvan.abstraction;
+//parent class
+abstract class BaseClass
+{
+    //abstract method
+    abstract public void show1();
+    //concrete method
+    public void show2(){
+        System.out.println("Concrete method of parent class");
+    }
+}
+Advantages of Abstraction in Java
+. It reduces the complexity of viewing things.
+. Increases software reuse and avoids code duplication: Loosely coupled classes often prove useful in other contexts.
+. It helps to increase the security and confidentiality of an application as only necessary details are exposed to the user.
+. Eases the burden of maintenance-Classes can be understood more quickly and debugged with little fear of harming other modules.
+Coupling--> dependency
+Cohesion--> load/functionality
+Data Encapsulation vs Data Abstraction in Java
+. Encapsulation is one step beyond abstraction.
+. Data Encapsulation is hidden data or information while Abstraction is hidinf the implementation details.
+. Encapsulation binds the data members and methods together while data abstraction deals with showing the extenaldetails of an entity to the user and hiding the details of its implementation.
+. Abstraction provides access to a specific part of data while encapsulation hides the data.
+Interface
+. amechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+. Java Interface also represents the IS-A relationship.
+Why use Java interface?
+ There are mainy three reasons to use interface. They are given below.
+   . It is used to achieve abstraction.
+   . By interface, we can support the functionality of multiple inheritance.
+   . It can be used to achieve loose coupling.
+         -----------          --------------         --------------
+         | class   |          | Interface  |         | Interface  |
+         -----------          --------------         --------------
+             ^                      ^                      ^
+             |extends               |implements            |extends
+             |                      |                      |
+         -----------          --------------         ---------------
+         | class   |          | class      |         |  Interface  |
+         -----------          --------------         ---------------
+Example
+interface Drawable{
+    void Draw();
+}
+class Rectangle implements Drawable{
+    public void draw(){
+        System.out.println("Drawing rectangle");
+    }
+}
+class Circle impelements Drawable{
+    public void draw(){
+        System.out.println("Drawing circle");
+    }
+}
+class TestInterface1{
+    public static void main(String[] args){
+        Drawable d = new Circle();
+        d.draw();
+    }
+}
+Abstract vs Interface
+-----------------------------------------------------------------------------------------------------------------
+Abstract Class                                                    |                   Interface
+-----------------------------------------------------------------------------------------------------------------
+1. Abstract class can have both abstract and non-abstract methods.| 1.Interface can have only abstract methods.Since
+                                                                  | Java 8, it can have default and static method also.
+2. Abstract class doesn't support multiple inheritance.           | 2.Interface supports multiple inheritance.
+3. Abstract class can have final, non-final static and non-static | 3.Interface has only static and final variables.
+fields.                                                           |
+4. Abstract class can provide the implementation of the interface.| 4.Interface cannot provide the implementation of abs                                                                  | tract methods.
+5. The abstract keyword is used to delcare abstract class.        | 5.The interface keyword is used to declare interface
+6. An abstract class can extend another Java class and implement  | An interface can extend another Java interface only.
+multiple Java interfaces.                                         |
+7. An abstract class be extended using keyword 'extends'.         | An interface can be implemented using keyword 'imple                                                                  | ments'.
+8. A Java abstract class can have class members like private,     | Members of a Java interface are public by default.
+protected,etc.                                                    |
+9. Example:                                                       | Example:
+   public abstract class Animal {                                 | public interface Animal {
+       public abstract void makeSound();                          |     void makeSound();
+   }                                                              | }
+----------------------------------------------------------------------------------------------------------------
+Inheritance
+. mechanism in which one object acquires all the properties and behavors of a parent object.
+. Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
+Why use inheritance in java
+. For Method Overriding(so runtime polymorphism can be achieved).
+. For Code Reusability.
+Terms used in Inheritance 
+. Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
+. Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
+. Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class. 
+. Reusability: As the name specifies. reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the pervious class.
+class User{ 
+   public String full_name;
+   public String email;
+   publc String role;
+   public void stringName(){
+       System.out.println("Full name:" + full_name);
+   }
+}
+class Admin extends User{
+   public String designation;
+   public void showInfo(){
+      System.out.println("Role"+ this.role);
+      System.out.println("Designation"+ designation);
+  }
+}
+class Gmail extends User{
+    public void info(){
+        System.out.println("Role"+ this.role);
+    }
+}
+class Main{
+    public static void main(String args[]){
+        Admin a = new Admin();
+        a.full_name= "Arbiter";
+        a.email= "arbiter@gmail.com";
+        a.role = "Creator";
+        a.destination = "Etheric Sea";
+        a.showInfo();
+        a.showName();
+        Gmail g = new Gmail();
+        g.full_name = "Rona";
+        g.info();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------class A {
+    String title;
+     public void showTitle(){
+         System.out.println("Title" + title);
+     }
+ }
+class B extends A{
+    String name;
+    public void info(){
+        System.out.println("Name"+ name);
+        System.out.println("Title"+ this.title);
+    }
+}
+class Main{
+    public static void main(String args[]){
+         A a = new A();
+         a.title = "I am him";
+         a.showTitle;
+         B b = new B();
+         b.name = "I am not him";
+         b.title = "A is not B";
+         b.showTitle();
+         b.info();
+    }
+}
+
+Types of inheritance
+
+
+        class A                     class A                              class A
+         
+          ^                            ^                                 ^       ^
+          |                            |                                 |       |
+       
+        class B                     class B                           class B     class C
+                                    
+                                       ^
+      1. single                        |                                3. hierarchical
+                         
+                                     class C 
+                                                                                 4. hybrid 5. Multiple
+                            
+                                 2. Multilevel
+-----------------------------------------------------------------------------------------------------------------Single Inheritance Example
+When a class inherits another class, it is known as a single inheritance. In the example given below. Dog class Inherits the Animal class, so there is the single inheritance.
+
+File : TestInheritance.java
+
+class TestInheritance{
+    public static void main(String[] args){
+           Dog d = new Dog();
+           d.bark();
+           d.eat();
+   }
+}
+class Animal{
+    void eat(){
+         System.out.println("Eating");
+    }
+}
+class Dog extends Animal{
+    void bark(){
+            System.out.println("barking");
+    }
+}
+
+Hierarchical Inheritance Example
+When two or more classes inherits a single class, it is known as hierarchical inheritance. In the example given below. Dog and Cat classes inherits the Animal class, so there is hierarchical Inheritance.
+
+File : Test Inheritance3.java
+class Animal{
+   void eat(){
+       System.out.println("eating...");
+   }
+}
+class Dog extends Animal{
+    void bark(){
+        System.out.println("barking...");
+    }
+}
+class Cat extends Animal{
+   void meow(){
+       System.out.println("meowing...");
+   }
+}
+class TestInheritance3(){
+    public static void main(String[] args){
+       Cat c = new Cat();
+       c.meow();
+       c.eat();
+   }
+} 
+
+Super Keyword in Java
+The super keyword in java is a reference variable which is used to refer immediate parent class object.
+Whenever you create the instance of subclass, an instance of aprent class is created implicitly which is referredby super reference variable.
+Usage of Java super keyword
+ 1. Super can be used to refer immediate parent class instance variable.
+ 2. Super can be used to invoke immeidate parent class method.
+ 3. Super() can be used to invoke immediate parent class constructor.
+
+1. Super is used to refer immediate parent class instance variable.
+  We can use super keyword to access the data member of field of parent class. It is used if parent class and chi  ld class have same fields.
+class Animal{
+    String color = "white";
+}
+class Dog extends Animal{
+    String color = "black";
+    void printColor(){
+        System.out.println(color);
+        System.out.println(super.color);
+    }
+}
+class TestSuper{
+    public static void main(String[] args){
+        Dog d = new Dog();
+        d.printColor();
+    }
+}
+Polymorphism
+#changing behaviour with respect to condition i.e 
+1. compile time
+2. run time (execution time)
+# task that is performed in different 
+  compile time (overloading)
+  runtime (overloading)
+
+1. Method Overloading(chapter 3)
+   #withis same_class
+   #method name same
+   #parameter different
+   # return type different
+class Addition{
+    void sum(){
+        System.out.println("Sum"+(10+12));
+    }
+    int sum(int a){
+        return a+2;
+    }
+    double sum(double a, double b){
+       return a+b;
+    }
+}
+class Main{
+    public statc void main)String[] args){
+        Addition a = new Addition();
+        a.sum();
+        System.out.println(a.sum(5);
+        System.out.println(a.sum(5.5,2.2);
+    }
+}
+2. Method Overriding
+# method name same as parent class(super class)
+# implementation in different class i.e sub class (child class) with different purpose.
+# parameter and return type should be same as parent class.
+class Shape{
+    double area(){
+         System.out.println("area");
+    }
+    double perimeter(){
+         System.out.println("perimeter");
+    }
+}
+class Rectangle extends Shape{
+    double l,b;
+    double area(){
+       return l*b;
+    }
+    double perimeter(){
+       return 2*(l+b);
+    }
+}
+class Circle extends Shape{
+    double r;
+    double pi = 3.1478;
+   double area(){
+       reutrn pi * r * r;
+   }
+   double perimeter(){
+       return 2* pi * r;
+   }
+}
+class Main{
+    public static void main(String[] args){
+         Rectangle r = new Rectangle ();
+         r.l=12;
+         r.b=4;
+         System.out.println("Area"+ r.area());
+         System.out.println("Perimeter"+r.perimeter());
+         Circle c = new Circle();
+         c.r =6;
+         System.out.println("Area"+area());
+         System.out.println("Perimeter"+c.perimeter());
+         Shape s = new Shape();
+         s.area();
+         s.perimeter();
+    }
+}
