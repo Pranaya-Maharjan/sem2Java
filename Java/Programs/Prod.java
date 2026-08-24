@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 public class Prod{
     public static void main(String[] args){
         if(args.length<2){

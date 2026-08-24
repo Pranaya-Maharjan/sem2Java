@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 class Studen3{
     int id;
     String name;

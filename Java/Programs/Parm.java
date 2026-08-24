@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 import java.util.Scanner;
 public class Parm{
     public static  void main(String[] args){

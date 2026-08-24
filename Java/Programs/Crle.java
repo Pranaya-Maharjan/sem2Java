@@ -1,4 +1,4 @@
-#! /usr/bin/env -S java --source 26
+
 class Crle{
     double pi = 3.1428;
     double r;
@@ -19,4 +19,3 @@ class Crle{
         System.out.println("The perimeter of circle is" + peri);
     }
 }
-        

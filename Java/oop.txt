@@ -1586,4 +1586,99 @@ class NestTry{
            }
       }
 }
-          
+Throw 
+. To throw an exception explicitly, use the throw statement
+  - flow of execution stops immeidately after the throw statement
+  - nearest enclosing try block is inspecteed to see if it has a catch statement that matches the type of exception and control is transferred to that statemtent
+  - No match: next enclosing try statement is inspected, and so on.
+  - no matching catch found in any block: default exception handler halts the program and prints the stack trace.
+Throw (example)
+class THrowDemo{
+    static void demoproc(){
+         try{
+              throw new NullPointerException("demo");
+         } catch(NullPointerException e){
+              System.out.println("caught inside demoproc.");
+              throw e;
+           }
+         }
+         public static void main(String[] args){
+              try{
+                  demoproc();
+              } catch(NullPointerException e){
+                    System.out.println("Recaught:" + e);
+              }
+         }
+Throws
+. If method can cause an exception that it does not handle
+     - Then method's declaration must include a throws clause (that lists the type of exceptions that a emthod might throw)
+     - Necessary for all exceptiiions, except Error or RUntimeException, or any of their subclasses.
+Throws (example)
+class ThrowsDemo{
+     static void throwOne() throws IllegalAccessException{
+          System.out.println("Inside throwOne.");
+          throw new IllegalAccessException("Demo");
+     }
+     public static void main(String[] args){
+          try{
+              throwOne();
+          } catch(IllegalAccessException e){
+               System.out.println("Caught " + e);
+           }
+    }
+}
+finally
+. finally creates a block of code that will be executed after a try/catcj block has completed and before the code following the try/catch block.
+  - finally block will execute whether or not an exception is thrown
+  - If an exception is thrown, the finally block will execute even if no catch statement matches the exception
+  - useful for closing file handles and freeing up any other resources
+  - finally clause is optional
+finally (example)
+class FinalylDemo{
+     try{
+          System.out.println("Inside procA"); throw new RuntimeException("demo");
+     } finally{ System.out.println("procA's finally");
+       }
+     static void procB(){
+         try{
+             System.out.println("Inside procB"); return;
+         } finally{ System.out.println("procB's finally");
+           }
+     }
+     static void procC(){
+        try{
+            System.out.println("inside procC");
+        } finally{ System.out.println("procC's finally");
+          }
+    }
+    public static void main(String[] args){
+        try{
+            procA();
+        } catch(Exception e){
+               System.out.println("Exception caught");
+          }
+        procB();
+        procC();
+   }
+}
+Multithreading in java
+. Process of executing multiple threads simultaneously.
+. Means executing multiple threads within the same program.
+. Lightweight sub-process, the smallest unit of processing.
+. For examples:
+   . Music Application: Thread 1 - Play Music, Thread 2 - Downloads song, Thread 3 - control volume, Thread 4 - minimize the app
+   . Web Browser: Thread 1 - download file, Thread 2 - load web pages, Thread 3 - play a video, thread 4 - respond to user input
+Advantages of Java Multithreading 
+. it doesn't block the user because threads are independent
+. we can perofrm multiple operations at the same time.
+. we can perform many operations together, so it saves time.
+. Threads are independent, so it doesn't affect other threads if an exception occurs in a single thread.
+Thread
+. A thread is a lightweight subprocess, It is a seperate path of execution.
+. Threads are independent. If there occurs exception in one thread, it doesn't affect other threads. It uses a shared memory area.
+THread Class
+. Java providdes Thread class to achieve thread programming.
+. Thread class provides constructors and methods to create and perform operations on a thread.
+. Thread class extends Object class and implements Runnable interface.
+            
+                    

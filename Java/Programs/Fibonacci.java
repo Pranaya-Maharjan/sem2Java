@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 class Fibonacci{
     static int fib(int n){
         if(n==0 || n==1)

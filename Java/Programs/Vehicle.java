@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 class Vehicle {
     String brand;
     String model;

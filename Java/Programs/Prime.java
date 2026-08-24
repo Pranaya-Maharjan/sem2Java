@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 public class Prime{
     public static void main(String[] args){
         try{
@@ -23,6 +22,6 @@ public class Prime{
         }
         catch(ArrayIndexOutOfBoundsException e){
             System.out.println("please provide numeric value");
-        }   
+        }
     }
 }

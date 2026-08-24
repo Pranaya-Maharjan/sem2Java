@@ -1,4 +1,3 @@
-#! /usr/bin/env -S java --source 26
 public class Fact{
     public static void main(String[] args){
         try{
