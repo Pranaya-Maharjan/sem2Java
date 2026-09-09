@@ -1,0 +1,6 @@
+Experimenting Thread. Thread Priority and Inter Thread communication with examples:
+objectives:
+1. to learn and understand key concept of Thread, Thread Priority and interthread communication.
+2. to create a simple hava class to experiment threads and thread priority.
+3. to create a simpel java class to experiment interthreads communication with example.
+date sep 5, 2026
