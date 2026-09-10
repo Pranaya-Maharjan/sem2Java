@@ -1,0 +1,2 @@
+lab 8: Character Stream Example. 
+This is a new file created using FIleWriter class.
