@@ -1,0 +1,5 @@
+Introduction to I/O Stream in Java and read and writing content of file using character stream
+objective:
+1. to learn and understand the concept of I/O stream
+2. to implement character stream to read and write content of file
+Date Sep 10,2026

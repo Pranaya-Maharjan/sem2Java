@@ -1,0 +1,9 @@
+****** TU BCA Second Semester Subjects *****
+1. OOP in Java - BCA 153
+2. Principles of Management - BCA 156
+3. UI/UX Design - BCA 155
+4. Mathematics II - BCA 154
+5. Microprocessor and Computer Architecture - BCA 152
+6. Discrete Structure - BCA 151
+
+******* Thank you ********
