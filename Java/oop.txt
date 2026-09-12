@@ -1773,6 +1773,9 @@ Deadlock in Java is a part of multithreading. Deadlock can occur in a situation 
 
 How to avoid deadlock?
 A solution for a problem is found at its roots. In deadlock it is the pattern of accessing the resources A and B, is the main issue. To solve the issue we will ahve to simply re-order the statements where the code is accessing shared resources.
+
+********************************* Unit-6 java-IO streams ************************************
+
 How to do I/O
     import java.io.*;
     .Open the stream
@@ -1845,3 +1848,188 @@ void close(){
 }
 
 
+Text files
+. Text(.txt) files are the simplest kind of files
+      text files can be used by many different programs
+. Formatted text files (such as .doc files) also contain binary formatting information
+. Only programs that "know the secret code" can make sense of formatted text files
+. Compilers, in general, work only with text
+
+The LineWriter class
+class LineWriter{
+    PrintWriter printWriter;
+    LineWriter(String fileName) {....}
+    void writerLine(String fileName) {...}
+    void close() {...}
+}
+
+The constructor for LineWriter
+
+LineWriter(String fileName){
+   try{
+          printWriter = new PrintWriter(new FileOutputStream(fileName), true);
+   }
+   catch(Exception e) {
+          System.err.println("lineWriter can't" + "use output file:" + fileName);
+   }
+}
+Flushing the buffer
+. When you put information into a buffered output stream, it goes into a uffer.
+. The buffer may not be written out right away.
+. If your program crashes, you amy not know how far it got before it crashed.
+. Flushing the buffer is forcing the information to be written out.
+PrintWriter
+. Buffers are automatically flushed when the program ends normally.
+. Usually it is your responsibility to flush buffer if the program does not end normally.
+. PrintWriter can do the flushing fo you
+      public PrintWriter(outputStream out, boolean autoFlush)
+writeLine
+void writeLine(String line){
+    printWriter.println(line);
+}
+
+close
+void close(){
+   printWriter.flush();
+   try{ printWriter.flush();}
+   catch(Exception e) { }
+}
+Class Reader
+. Constructor: protected Reader();
+. Main Methods
+   . public int read() throw IOException:
+        . single character or -1 if at end
+   . publci int read(Char[] cbuf) throwss IOException:
+        . cbuf is the destination buffer, returns no. character or -1 if EOS
+	. reads character from stream in cbuf until array full, error or EOS
+   . public abstract int read(char[] cubf, int off, int len) throws IOException:
+        . cubf is the destination buffer, returns no, characters or -1 if EOS
+	. reads character from stream in cbuf until array full, error or EOS
+	. off is the initial position, len the max no. characters to read
+   . public abstract void close() thrwos IOException:
+        . Close the stream
+	
+Class InputStream
+. Constructor: public InputStream();
+. Same as before, but to read byte and array of bytes:
+      . public int read() throws IOException 
+      . public int read(byte[] cubf, int off, int len) throws IOException
+      . public abstract void close() throws IOException
+Class Writer
+. Constructor: protected Writer();
+. Main Methods;
+      . pubic void write(int c) throws IOException
+      . public voi write(char [] cbuf) throws IOException
+      . public abstract void write(char[] cbuf, int off,int len) throws IOException
+              . cbuf: array of characters, off initial position, len max no. to write
+      . public abstract void flusg() throws IOException
+              . buffer cbuf is immediately emptied
+      . public abstract void close() throws IOException
+              . closes the stream
+Class OutputStream
+. Constructor: public OutputStream();
+. Main Methods:
+      . pubic void write(byte[] b) throws IOException
+      . public void write(byte[] b, int off, int len) throws IOException
+      . public abstract void write(char[] cbuf, int off,int len) throws IOException
+              . cbuf: array of characters, off initial position, len max no. to write
+      . public abstract void flusg() throws IOException
+              . buffer cbuf is immediately emptied
+      . public abstract void close() throws IOException
+              . closes the stream
+
+The Reader Hierarchy
+
+                                         Reader
+					 ^    ^
+                                        /      \
+                                       /        \
+			InputStreamReader        FileReader
+                                      \          /
+                                       \        /
+				        v      v
+				       BufferedReader
+
+The abstract Reader Class with subclasses for buffered input from a fule or the keyboard.
+
+
+Writer Inheritance Hierarchy
+
+                                                       
+                                         Writer
+					 ^    ^
+                                        /      \
+                                       /        \
+			OutputStreamReader      FileWriter
+                                      \          /
+                                       \        /
+				       v       v
+				       Print Writer
+
+Writer inheritance hierarchy with physical character stream classes and filter class Print Writer.
+
+Stream of Characters
+
+             |------BufferedReader-----------LineNumberReader
+	     |------CharArayReader
+	     |------InputStreamReader--------FileReader
+Reader-------|------FilterReader-------------PushbackReader
+	     |------PipedReader
+	     |------StringReader
+Silicon Valley
+whoami
+
+
+             |------BufferedWriter-----------LineNumberWriter
+	     |------CharArayWriter
+	     |------InputStreamWriter--------FileWriter
+Writer-------|------FilterWriter-------------PushbackWriter
+	     |------PipedWriter
+	     |------StringWriter
+FileInputStream/FileOutputStream
+. Subclasses of InputStream and OutputStream
+. Open stream of byte from/to file
+. Same methods as InputStream and OutputStream
+. Constructors:
+     . public FileInputStream(File file) throws FileNotFoundException
+     . public FileInputStream(String name) throws FileNotFoundException
+     . public FileInputStream(File file) throws FileNotFoundException
+     . public FileInputStream(String name) throws FileNotFoundException
+     . public FileInputStream(String name, boolean append) throws FileNotFoundException
+FileReader/FileWriter   
+. Subclasses of Reader and Writer
+. Open stream of characters from/to file
+. Same methods as Reader and Writer
+. Constructors:
+     . public FileInputStream(File file) throws FileNotFoundException
+     . public FileInputStream(String name) throws FileNotFoundException
+     . public FileInputStream(File file) throws FileNotFoundException
+     . public FileInputStream(String name) throws FileNotFoundException
+     . public FileInputStream(String name, boolean append) throws FileNotFoundException
+
+Class File
+. Abstract representation of file and directory
+. Methods to manipulate file and directory(create,destroy etc.)
+. Does not contaion methods to read/write
+. Constructors:
+       public File(String pathname) throws NullPointerException
+       public File(File parent, String child) throws NullPointerException
+       public File(String parent, String child) throws NullPointerException
+Scanner Class APi (end)
+String Next()
+    Finds and returns the next complete token in the input stream as a String
+boolean nextBoolean()
+    Scans the next token in the input stream into a boolean value and returns that value.
+double nextDouble()
+    Scans the ntext toekn in the input stream into a double value and returns that value
+int nextInt()
+    Scans the next token in the input stream into an int value and returns that value
+
+Testing for Scanner Tokens
+
+loop reads token in the line
+while(sc.hasNext())
+{
+   token = sc.next();
+   System.out.println("In loop next token = " + token);
+}
