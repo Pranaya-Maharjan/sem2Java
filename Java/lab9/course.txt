@@ -1,0 +1,17 @@
+*** Tu BachelorIT Courses ***
+1. Bsc CSIT
+2. BCA
+3. BIT
+4. BIM
+5. BITM
+*****************************
+*****************************
+
+*** TU Master IT Courses ***
+1. MSc CSIT
+2. MCA
+3. MIT
+4. MSc Data Science
+
+*****************************
+*****************************

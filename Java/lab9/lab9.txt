@@ -1,0 +1,6 @@
+Implementation of Input.Output Stream usin Byte Stream and Bufferred Stream to cpoy content of file and store to another file.
+Objective:
+1. to learn to understand I/o Byte Stream
+2. To implement I/o Stream to read, copy and store file content.
+3. To load file input into buffer using Buffered Stream.
+Date: 18 Sep, 2026

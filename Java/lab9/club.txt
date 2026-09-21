@@ -1,0 +1,11 @@
+FUll Name      Semester   Faculty
+Hira Basnet     Second    BCA
+Manoj Tripathi  Third     CSIT
+Kiran Bajagain  First     CSIT
+Mina Thapa      First     CSIT
+Kripa Maharjan  Second    BCA
+
+Pranaya   Mhzn bca
+Pranaya   second bca
+Pranaya   second bca
+pranaya   second bca

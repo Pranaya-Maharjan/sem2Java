@@ -5,7 +5,7 @@ public class InterThreadCommunicationExample extends Thread{
 	private static final Object lock = new Object();
 	private static boolean isPlaying = false;
 	private static boolean isPaused = false;
-	private static final String musicFilePath = "~/Videos/wantu.mp3";
+	private static final String musicFilePath = "wantu.mp3";
 	public InterThreadCommunicationExample(String name){
 		threadName = name;
 	}
@@ -28,7 +28,7 @@ public class InterThreadCommunicationExample extends Thread{
 					System.out.println("MusicPlayer: Playing music from" + musicFilePath);
 					isPlaying = true;
 					isPaused = false;
-					Thread.sleep(500);
+					Thread.sleep(5000);
 					System.out.println("MusicPlayer: Music is playing.");
 					isPlaying = false;
 					lock.notify();

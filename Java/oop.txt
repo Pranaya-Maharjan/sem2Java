@@ -2033,3 +2033,170 @@ while(sc.hasNext())
    token = sc.next();
    System.out.println("In loop next token = " + token);
 }
+File Input using Scanner
+A sport team creates the file "attendance.dat" to store attendance data from home games during the season. The example uses the Scanner object dataIn and a loop to read the sequence of attendance values from the file and determine the total attendance. The condition has NextInt() returns false when all fo the data has been read from the file.
+//create an Scanner objject attached to the file "attendace.dat"
+Scanner datain = new Scanner(new FileReader("attendance.dat"));
+int gameATT, totalATT = 0;
+//the loop reads the integer game attendance until end of file
+while(dataIn.hasNextInt()){         //loop iteration condition
+	gameAtt = dataIn.nextInt();
+	totalAtt += gameAtt;
+}
+About FileDialogs
+. The FileDialog class displays a window from which the user can select a file.
+. The FileDialog window is modal--the application cannot continue until it is closed.
+. Onli applications, not applets, can use a FileDialog; only applications can access files.
+. Every FileDialog window is associated with a Frame.
+FileDialog constructors
+.FileDialog(Frame f)
+    . Creates a FileDialog attached to Frame f
+. FileDialog(Frame f, String title)
+    . Creates a FileDialog attached to Frame f, with the given title
+. FileDialog (Frame f, String title, int type)
+    . Creates a FileDialog attached to Frame f, with the given title; the type can either  FileDialog.LOAD or FileDialog.SAVE
+Useful FileDialog methods I
+. String getDirectory()
+    . Returns the selected directory
+. String getFile()
+    . Returns the name of currently selected file, or null if no file is selected
+. int getMode()
+    . Returns either FileDialog.LOAD or FileDialog.SAVE, depending on what the dialog is being used for
+Useful FileDialog methods II
+. void setDirectory(String directory)
+    . Changes the current directory to directory
+. void setFile(String fileName)
+    . Changes the current file to fileName
+. void setMode(int mode)
+    . Sets the mode to either FileDialog.LOAD or FileDialog.SAVE
+Serialization
+. You can also read and write objects to files
+. Object I/O goes by the awkward name of serialization
+. Serialization in other languages can be very difficult, because objects may contain references to other objects
+. Java makes serialization (almost) easyUseful FileDialog methods I
+Condition for serializability
+. If an obhect is to be serialized:
+    . The class must be declared as public
+    . The class must be implement Serializable
+    . The class must have a no-argument constructor
+    . All fieds of the class must be serializable: either primitive type or serializable objects
+Implementing the Serializable interface
+. To 'implement' an interface means to define all the methods declared by that interface, but...
+. The Serializable interface does not define any methods!
+    . Questions: What possible use is there for an interface that does not delcare any methods?
+    . Answer: Serializable is used as flag to tell java it needs to do extra work with this class
+Writing objects to a file
+ObjectOutputSteam objectOut = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
+object.Out.writeObject(serializableObject);
+objectOut.close();
+Reading objects to a file
+ObjectInputSteam objectIn = new ObjectInputStream(new BufferedInputStream(new FileInputStream(fileName)));
+myObject = (itsType) objectIn.readObject();
+objectIn.close();
+********************* Chapter -7 *******************
+Wrapper classes in Java
+The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+Since J2SE 5.0, autoboxing and unboxing feature convert primitives into objects and objects into primitive automatically. The automatic conversion of primitive into an object is known as autoboxing and vice-versa unboxing.
+The eight classes of the java.lang package are known as wrapper classes in java. The list of eight wrapper classes are given below:
+Primitive Type                Wrapper class
+boolean                           Boolean
+char                              Character
+byte                              Byte
+short                             Short
+int                               Integer
+long                              Long
+float                             Float
+double                            Double
+autoboxing
+The automatic conversion of primitive data type into its corresponding wrapper class is known as autoboxing, for example, byte to Byte, char to Character, int to Integer,long to Long, float to Float, boolean to BOoean, double to DOuble and short to Short.
+Since Java 5, we do not need to use the valueOf() method of wrapper classes to convert the primitive into objects. 
+Wrapper class Example: Primitive to Wrapper
+//Java program to convert primitive into objects 
+// Autoboxing example of int to Integer
+public class Ex{
+    public static void main(String[] args){
+        //Converting int to Integer
+	int a = 20;
+	Integer i = Integer.valueOf(a);
+	//Converting int to Integer explicitly
+	Integer j =a;
+	//autoboxing, now compiler will write Integer.valueOf(a) internally
+	Syste.out.println(a + " " + i + " " + j);
+    }
+}
+Output 
+20 20 20
+
+Unboxing
+The automatic conversion of wrapper type into its corresponding primitive type is known as unboxing. It is the reverse process of autoboxing. Since Java 5, we do not need to use the intValue() method of wrapper classes to convert the wrapper type into primitives.
+Wrapper class Example: Wrapper to Primitive
+//Java program to convert object into primitives
+//Unboxing example of Integer to int
+public class Ex{
+    public static void main(String[] args){
+        //Converting Integer to int
+	Integer a = new Integer(3);
+	int i =a.intValue();
+	int j = a; //unboxing, now compiler will write a.intValue() internally
+	System.out.println(a + " " + i + " " + j);
+    }
+}
+Output:
+3 3 3 
+Java Wrapper classes Example
+public class Ex{
+    public static void main(String[] args){
+        byte b =10;
+	short s = 20;
+	int i = 30;
+	long l = 40;
+	float f  = 50.0F;
+	double d = 60.0D;
+	char c = 'c';
+	boolean b2 = true;
+        //Autoboxing: Converting primitives into objects
+	Byte byteobj = b;
+	Short shortobj = s;
+	Integer intobj = i;
+	Long longobj = l;
+	Float floatobj = f;
+	Double doubleobj = d;
+	Character charobj = c;
+	Boolean boolobj = b2;
+	//Printing objects
+	Systme.out.println("--Printing object values--");
+	System.out.println("Byte object:" + byteobj);
+	System.out.println("Short object:" + shortobj);
+	System.out.println("Integer object:" + intobj);
+	System.out.println("Long object:" + longobj);
+	System.out.println("Float object:" + floatobj);
+	System.out.println("Double object:" + doubleobj);
+	System.out.println("Char object:" + charobj);
+	System.out.println("Boolean object:" + boolobj);
+	//Unboxing: Converting Objects to Primitives
+	byte bytevalue = byteobj;
+	short shortvalue = shortobj;
+	int intvalue = intobj;
+	long longvalue = longobj;
+	float floatvaue = floatobj;
+	double doublevalue = doubleobj;
+	char charvalue = charobj;
+	boolean boolvalue = boolobj;
+	//Printing objects
+	Systme.out.println("--Printing primitive values--");
+	System.out.println("byte object:" + bytevalue);
+	System.out.println("short object:" + shortvalue);
+	System.out.println("int object:" + intvalue);
+	System.out.println("long object:" + longvalue);
+	System.out.println("float object:" + floatvalue);
+	System.out.println("double object:" + doublevalue);
+	System.out.println("char object:" + charvalue);
+	System.out.println("boolean object:" + boolvalue);
+	}
+}
+	
+
+	
+
+
+
