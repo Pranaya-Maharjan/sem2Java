@@ -22,7 +22,7 @@ class LabFourString {
 
         String college = "Dav College | BCA | Lalitpur";
         System.out.println("Original String: " + college);
-        System.out.println("Uppercase: " + college.toUpprCase());
+        System.out.println("Uppercase: " + college.toUpperCase());
         System.out.println("Lowercase: " + college.toLowerCase());
 
         String session = "OOP in Java";

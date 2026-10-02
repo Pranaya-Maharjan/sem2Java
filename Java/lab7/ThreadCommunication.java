@@ -4,10 +4,8 @@ public class ThreadCommunication extends Thread {
 
     private String threadName;
 
-    // Shared lock/object
     private static final Object lock = new Object();
 
-    // Shared states
     private static boolean isPlaying = false;
     private static boolean isPaused = false;
     private static boolean shouldExit = false;
@@ -37,7 +35,6 @@ public class ThreadCommunication extends Thread {
 
             synchronized (lock) {
 
-                // Wait until music is requested to play
                 while (!isPlaying && !shouldExit) {
 
                     try {
@@ -57,7 +54,6 @@ public class ThreadCommunication extends Thread {
                     }
                 }
 
-                // Exit condition
                 if (shouldExit) {
                     return;
                 }
@@ -68,9 +64,6 @@ public class ThreadCommunication extends Thread {
                 );
             }
 
-            // -------------------------------------------------
-            // Do NOT hold the lock while playing/sleeping
-            // -------------------------------------------------
 
             try {
 
@@ -78,12 +71,10 @@ public class ThreadCommunication extends Thread {
 
                     synchronized (lock) {
 
-                        // Check if user requested exit
                         if (shouldExit) {
                             return;
                         }
 
-                        // Wait if music has been paused
                         while (isPaused && !shouldExit) {
 
                             System.out.println(
@@ -114,7 +105,6 @@ public class ThreadCommunication extends Thread {
                         "MusicPlayer: Music finished."
                     );
 
-                    // Inform other waiting threads
                     lock.notifyAll();
                 }
 
@@ -137,7 +127,6 @@ public class ThreadCommunication extends Thread {
 
             synchronized (lock) {
 
-                // Wait until music is playing
                 while (!isPlaying && !shouldExit) {
 
                     try {
@@ -167,11 +156,6 @@ public class ThreadCommunication extends Thread {
                 );
             }
 
-            /*
-             * Controller does not continuously pause the music.
-             *
-             * It simply waits for commands from the main thread.
-             */
             synchronized (lock) {
 
                 try {
@@ -206,7 +190,6 @@ public class ThreadCommunication extends Thread {
                     "Main thread: Music paused."
                 );
 
-                // Wake waiting threads
                 lock.notifyAll();
 
             } else {
@@ -230,7 +213,6 @@ public class ThreadCommunication extends Thread {
                     "Main thread: Music resumed."
                 );
 
-                // Wake MusicPlayer
                 lock.notifyAll();
 
             } else {
@@ -255,7 +237,6 @@ public class ThreadCommunication extends Thread {
                     "Main thread: Starting music."
                 );
 
-                // Wake MusicPlayer
                 lock.notifyAll();
 
             } else {
@@ -277,7 +258,6 @@ public class ThreadCommunication extends Thread {
                 "Main thread: Stopping music player..."
             );
 
-            // Wake all waiting threads
             lock.notifyAll();
         }
     }
@@ -290,7 +270,6 @@ public class ThreadCommunication extends Thread {
         InterThreadCommunicationExample musicController =
             new InterThreadCommunicationExample("MusicController");
 
-        // Start both threads
         musicPlayer.start();
         musicController.start();
 

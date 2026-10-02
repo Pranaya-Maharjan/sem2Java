@@ -25,7 +25,7 @@ class InputOutputStream{
 		        System.out.println("***Copying file content to " + output_file);
 			int data;
 			while((data = bin.read()) != -1){
-				System.out.println((char) data);
+				System.out.print((char) data);
 				bout.write(data);
 			}
 			bout.flush();

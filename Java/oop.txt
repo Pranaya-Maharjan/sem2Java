@@ -529,12 +529,12 @@ Inheritance
 Why use inheritance in java
 . For Method Overriding(so runtime polymorphism can be achieved).
 . For Code Reusability.
-Terms used in Inheritance 
+Terms used in Inheritance
 . Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
 . Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
-. Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class. 
+. Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class.
 . Reusability: As the name specifies. reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the pervious class.
-class User{ 
+class User{
    public String full_name;
    public String email;
    publc String role;
@@ -598,18 +598,18 @@ Types of inheritance
 
 
         class A                     class A                              class A
-         
+
           ^                            ^                                 ^       ^
           |                            |                                 |       |
-       
+
         class B                     class B                           class B     class C
-                                    
+
                                        ^
       1. single                        |                                3. hierarchical
-                         
-                                     class C 
+
+                                     class C
                                                                                  4. hybrid 5. Multiple
-                            
+
                                  2. Multilevel
 -----------------------------------------------------------------------------------------------------------------Single Inheritance Example
 When a class inherits another class, it is known as a single inheritance. In the example given below. Dog class Inherits the Animal class, so there is the single inheritance.
@@ -659,7 +659,7 @@ class TestInheritance3(){
        c.meow();
        c.eat();
    }
-} 
+}
 
 Super Keyword in Java
 The super keyword in java is a reference variable which is used to refer immediate parent class object.
@@ -688,10 +688,10 @@ class TestSuper{
     }
 }
 Polymorphism
-#changing behaviour with respect to condition i.e 
+#changing behaviour with respect to condition i.e
 1. compile time
 2. run time (execution time)
-# task that is performed in different 
+# task that is performed in different
   compile time (overloading)
   runtime (overloading)
 
@@ -1214,12 +1214,12 @@ Inheritance
 Why use inheritance in java
 . For Method Overriding(so runtime polymorphism can be achieved).
 . For Code Reusability.
-Terms used in Inheritance 
+Terms used in Inheritance
 . Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
 . Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
-. Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class. 
+. Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class.
 . Reusability: As the name specifies. reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the pervious class.
-class User{ 
+class User{
    public String full_name;
    public String email;
    publc String role;
@@ -1283,18 +1283,18 @@ Types of inheritance
 
 
         class A                     class A                              class A
-         
+
           ^                            ^                                 ^       ^
           |                            |                                 |       |
-       
+
         class B                     class B                           class B     class C
-                                    
+
                                        ^
       1. single                        |                                3. hierarchical
-                         
-                                     class C 
+
+                                     class C
                                                                                  4. hybrid 5. Multiple
-                            
+
                                  2. Multilevel
 -----------------------------------------------------------------------------------------------------------------Single Inheritance Example
 When a class inherits another class, it is known as a single inheritance. In the example given below. Dog class Inherits the Animal class, so there is the single inheritance.
@@ -1344,7 +1344,7 @@ class TestInheritance3(){
        c.meow();
        c.eat();
    }
-} 
+}
 
 Super Keyword in Java
 The super keyword in java is a reference variable which is used to refer immediate parent class object.
@@ -1373,10 +1373,10 @@ class TestSuper{
     }
 }
 Polymorphism
-#changing behaviour with respect to condition i.e 
+#changing behaviour with respect to condition i.e
 1. compile time
 2. run time (execution time)
-# task that is performed in different 
+# task that is performed in different
   compile time (overloading)
   runtime (overloading)
 
@@ -1489,15 +1489,15 @@ Exception Types
      (eg Stack overflow)
 Uncaught Exceptions
 . Uncaught exception : caught by the default handler (provided by the Java run-time system) that
-   - Displays a string describing the exception 
+   - Displays a string describing the exception
    - prints a stack tree from the point at which the exception occurred
    - terminates the program
         java.lang.ArithmeticException: /by zero at Exc0.main(Exc0.java:4)
 Using try and catch
-. Exception handling benefits 
+. Exception handling benefits
    - allows you to fix the error
    - prevents the program from automatically terminating
-class Exc2 ( 
+class Exc2 (
     public static void main(String[] args){
         int d,a;
         try{//monitor a block of code.
@@ -1586,7 +1586,7 @@ class NestTry{
            }
       }
 }
-Throw 
+Throw
 . To throw an exception explicitly, use the throw statement
   - flow of execution stops immeidately after the throw statement
   - nearest enclosing try block is inspecteed to see if it has a catch statement that matches the type of exception and control is transferred to that statemtent
@@ -1668,7 +1668,7 @@ Multithreading in java
 . For examples:
    . Music Application: Thread 1 - Play Music, Thread 2 - Downloads song, Thread 3 - control volume, Thread 4 - minimize the app
    . Web Browser: Thread 1 - download file, Thread 2 - load web pages, Thread 3 - play a video, thread 4 - respond to user input
-Advantages of Java Multithreading 
+Advantages of Java Multithreading
 . it doesn't block the user because threads are independent
 . we can perofrm multiple operations at the same time.
 . we can perform many operations together, so it saves time.
@@ -1692,8 +1692,8 @@ Explanation of different Thread States
 . Active: When a thread invokes the start() method, it moves from the new state to the active state. The active state contains two states within it: one is runnable, and the other is running.
 . Runnable: A thread, that is ready to run is then moved to the runnable state. In the runnable state, the thread may be running or may be ready to run at any given instance of time. It is the duty of the thread scheduler to provide the thread time to run, i.e., moving the thread the running state.
 . Running: When the thread gets the CPU, it moves from the runnable to the running state. Generally, the most common change in the state of a thread is from runnable to running and again back to runnable.
-            
-Explanation of DIfferent Thread States 
+
+Explanation of DIfferent Thread States
 . Blocked or Waiting: Whenever a thread is inactive for a span of time(not permanently)then, either the thread is in the blocked state or is in the waiting state.
 
 For example, a thread (let's say its name is A) may want to print some data from the printer. However, at the same time, the other thread(let's say its name is B) is using the printer to print some data. Therefore, thread A has to wait for thread B to use the printer. any execution and thus never consume any cucle of the Central Processing Unit (CPU). Hence, we can say that thread A remains idle until the thread scheduler reactivates thread A, which is in the waiting or blocked state.
@@ -1712,9 +1712,9 @@ A terminated thread means the thread is no more in the system. In other words, t
 Implementation of THread States
 . In Java, one can get the current state of a thread using the Thread.getState() method. The java.lang.Thread.State class of Java provides the constants ENUM to represent the state of a shread. These Constants are:
 
-Thread Priority 
+Thread Priority
 Priorities are represented by a number between 1 and 10. In most cases, Thread schedular schedules the threads according to their priority (known as preemptive scheduling). But it is not guarantedd because it depends on JVM specification that which scheduling it chooses.
-3 constants defined in Thread class: 
+3 constants defined in Thread class:
 Example of priority of a Thread:
 1. class TestMultiPriority1 extends Thread{
 2. public void run(){
@@ -1726,17 +1726,17 @@ Example of priority of a Thread:
 8.TestMultiPriority1 m1 = new TestMultiPriority1();
 9.TestMultiPriority1 m1 = new TestMultiPriority1();
 10.m1.setPriority(Thread.MIN_PRIORITY);
-11.m2.setPriority(Thread.MAX_PRIORITY); 
+11.m2.setPriority(Thread.MAX_PRIORITY);
 12.m1.start();
 13.m2.start();
-14.  
+14.
 15.}
-16.} 
+16.}
 Synchronization
 . Synchronization in Java is the capability to control the access of multiple threads to any shared resource.
 . Java Synchronization is better option where we want to allow only one thread to access the shared resource.
 Why use Synchronizaiton?
-The synchronizaiton is mainly used to 
+The synchronizaiton is mainly used to
 1. To prevent thread intereference.
 2. To prevent consistency problem.
 There are two types of synchronization
@@ -1754,7 +1754,7 @@ Mutual Exclusive helps keep threads from interfering with one another while shar
 1. By using synchronized method
 2. By using synchronized block
 3. By using static synchronization
-Inter-thread Communication in Java 
+Inter-thread Communication in Java
 Inter-thread communication or Co-operation is all about allowing synchronized thread to communicate with each other.
 Cooperation(Inter-thread communication) is a mechanism in which a thread is paused running in its ciritcal section and another thread is allowed to enter (or lock) in the same critical section to be executed. It is implemented by following methods of Object class:
 . wait() - causes current thread to release the lock and wait until either another thread invokes the notify() method or the notifyAll() method for this onject, or a specified amount of time has elapsed.
@@ -1908,11 +1908,11 @@ Class Reader
 	. off is the initial position, len the max no. characters to read
    . public abstract void close() thrwos IOException:
         . Close the stream
-	
+
 Class InputStream
 . Constructor: public InputStream();
 . Same as before, but to read byte and array of bytes:
-      . public int read() throws IOException 
+      . public int read() throws IOException
       . public int read(byte[] cubf, int off, int len) throws IOException
       . public abstract void close() throws IOException
 Class Writer
@@ -1955,7 +1955,7 @@ The abstract Reader Class with subclasses for buffered input from a fule or the 
 
 Writer Inheritance Hierarchy
 
-                                                       
+
                                          Writer
 					 ^    ^
                                         /      \
@@ -1996,7 +1996,7 @@ FileInputStream/FileOutputStream
      . public FileInputStream(File file) throws FileNotFoundException
      . public FileInputStream(String name) throws FileNotFoundException
      . public FileInputStream(String name, boolean append) throws FileNotFoundException
-FileReader/FileWriter   
+FileReader/FileWriter
 . Subclasses of Reader and Writer
 . Open stream of characters from/to file
 . Same methods as Reader and Writer
@@ -2194,9 +2194,12 @@ public class Ex{
 	System.out.println("boolean object:" + boolvalue);
 	}
 }
-	
+Introduction
+. a framework that provides an architecture to store and manipulate the group of objecs.
+. can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+. Java Collection means a single unit of objects.
+. Java Collection framework provides many interfaces(Set, List,Queue, Deque) and classses(ArrayList,Vector,LinkedList,PriorityQueue,HashSet,LinkedHashSet,TreeSet).
 
-	
+www.tpointtech.com //for iterators and others
 
-
-
+What is Java Vector
